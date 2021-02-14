@@ -160,4 +160,18 @@ section div.todo button.trash {
             transform: scale(1);
   }
 }
+
+@-webkit-keyframes scaleDown {
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes scaleDown {
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
 /*# sourceMappingURL=style.css.map */

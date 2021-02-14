@@ -38,6 +38,15 @@ add.addEventListener("click", e => {
     trashButton.classList.add("trash");
     trashButton.innerHTML = '<i class="fas fa-trash"></i>';
 
+    trashButton.addEventListener("click", e => {
+        let todoItem = e.target.parentElement;
+        todoItem.addEventListener("animationend", () => {
+            todoItem.remove();
+        })
+
+        todoItem.style.animation = "scaleDown 0.3s forwards";
+    })
+
     todo.appendChild(completeButton);
     todo.appendChild(trashButton);
 
