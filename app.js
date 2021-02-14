@@ -163,7 +163,7 @@ function mergeTime(arr1, arr2) {
     let result = [];
     let i = 0;
     let j = 0; 
-    if (i < arr1.length && j < arr2.length){
+    while (i < arr1.length && j < arr2.length){
         if (Number(arr1[i].todoMonth) > Number(arr2[j].todoMonth)){
             result.push(arr2[j]);
             j++;
