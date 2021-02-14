@@ -52,6 +52,7 @@ add.addEventListener("click", e => {
 
     todo.style.animation = "scaleUp 0.3s forwards";
 
+    form.children[0].value = ""; //Clear the text input value
     section.appendChild(todo);
 
 
