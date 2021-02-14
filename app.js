@@ -12,6 +12,12 @@ add.addEventListener("click", e => {
     let todoMonth = form.children[1].value;
     let todoDate = form.children[2].value;
 
+    if (todoText === "")
+    {
+        alert("Please input something");
+        return; //跳出這個click event, 不執行下面所有的code
+    }
+
     // create a todo
     let todo = document.createElement("div");
     todo.classList.add("todo");
