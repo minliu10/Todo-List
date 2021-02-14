@@ -99,7 +99,10 @@ add.addEventListener("click", e => {
 
 })
 
-let myList = localStorage.getItem("list");
+loadData();
+
+function loadData(){
+    let myList = localStorage.getItem("list");
 if (myList !== null){
     let myListArray = JSON.parse(myList);
     myListArray.forEach(item => {
@@ -154,6 +157,8 @@ if (myList !== null){
     })
 }
 
+}
+
 function mergeTime(arr1, arr2) {
     let result = [];
     let i = 0;
@@ -198,4 +203,19 @@ function mergeSort(arr) {
     }
 }
 
-console.log(mergeSort(JSON.parse(localStorage.getItem("list"))));
+
+let sortButton = document.querySelector("div.sort button");
+sortButton.addEventListener("click", () => {
+    //sort data
+    let sortedArray = mergeSort(JSON.parse(localStorage.getItem("list")));
+    localStorage.setItem("list", JSON.stringify(sortedArray));
+
+    //remove data
+    let len = section.children.length;
+    for (let i = 0; i < len; i ++){
+        section.children[0].remove();
+    }
+
+    // load data
+    loadData();
+})
